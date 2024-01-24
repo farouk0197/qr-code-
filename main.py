@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request
 import qrcode
 from io import BytesIO
-from base64 import b64decode
+from base64 import b64encode
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def home():
     return render_template('index.html')
 
 
-@app.router('/', metjods=['POST'])
+@app.route('/', methods=['POST'])
 def gnerateQR():
     memory = BytesIO()
     data = request.form.get('link')
@@ -20,7 +20,8 @@ def gnerateQR():
     memory.seek(0)
     
 
-    base64_img = 'data:image/png;base64,' + b64decode(memory.getvalue()).decode('ascii')
+    base64_img = 'data:image/png;base64,' + \
+          b64encode(memory.getvalue()).decode('ascii')
     return render_template('index.html', data=base64_img)
 
 
