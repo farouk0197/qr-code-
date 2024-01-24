@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,300;1,400&family=Poppins:ital@0;1&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Ubuntu&display=swap"
+        rel="stylesheet">
+    <title>QR Code</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>QR Code Generator </h1>
+        <h2>Insert a link bellow to generate a QR Code</h2>
+    </div>
+    <form action="" method="post">
+        <input type="text" name="link">
+        <button type="submit">Generate QR Code</button>
+    </form>
+    <div class="'generated">
+        <img src="{{data}}" alt="">
+        <p>Here is the QR Code we generated for you</p>
+
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0re 10rem;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .title{
+        padding: 6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        color: rgb(37, 37, 37);
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        color: rgb(37, 37, 37);
+    }
+    form input {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        width: 50%;
+        background: black;
+        color: white;
+        border: none;
+    }
+    form button{
+        font-size: 1rem;
+        background-color: rgb(25, 52, 161);
+        border: none;
+        color: white;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        border-radius: 0.5rem;
+    }
+
+    .generate{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+</style>
